@@ -1,0 +1,41 @@
+/* NEXUS accents (Neon Lime #C5F946, Electric Green #8EDB36, Ice White #F5F7F2, Muted Sage #66736A) on white-glass surfaces. No black. */
+:root{
+--lime:#C5F946;--electric:#8EDB36;--ice:#F5F7F2;--sage:#66736A;
+--font-display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--font-body:'Source Sans 3',system-ui,sans-serif;
+--color-accent:#C5F946;--color-accent-light:#8EDB36;--color-green:#8EDB36;--color-green-light:#C5F946;--color-white:#FFFFFF;
+--color-success:#2F7A12;--color-error:#C0392B;
+--grad:linear-gradient(120deg,#C5F946 0%,#8EDB36 100%);
+--btn:#4A9429;--btn-hover:#3E8222;--btn-text:#FFFFFF;
+}
+/* Light = default: white transparent (glass) surfaces over a soft lime-tinted background */
+:root,:root[data-theme="light"]{
+color-scheme:light;
+--ink:#1C2A20;--on-dark:#1C2A20;--on-dark-soft:#41544A;--eyebrow:#3F6F0A;
+--color-primary:#3F6F0A;--color-primary-light:#5E9A14;--color-primary-dark:#2F5A08;--color-black:#F5F7F2;
+--color-accent-soft:#E3EBD9;--color-secondary:#F5F7F2;
+--color-background:#F5F7F2;--page-bg:#F5F7F2;
+--color-surface:rgba(255,255,255,.5);--color-surface-alt:rgba(255,255,255,.62);--color-card:rgba(255,255,255,.68);
+--glass:rgba(255,255,255,.55);--glass-2:rgba(255,255,255,.8);--glass-border:rgba(255,255,255,.9);
+--color-heading:#1C2A20;--color-text:#33443A;--color-muted:#5E6E64;--color-border:rgba(63,111,10,.18);--color-sage:#66736A;
+--grad-dark:#F5F7F2;
+--grad-text:linear-gradient(90deg,#3F6F0A,#6FA81F,#3F6F0A);
+--num:rgba(63,111,10,.08);--soft-pink:rgba(255,255,255,.6);--shadow:rgba(40,60,30,.12);
+--nav-bg:rgba(245,247,242,.88);--menu-bg:#F5F7F2;--overlay:rgba(245,247,242,.7);--pop-bg:rgba(255,255,255,.92);
+--blob1:transparent;--blob2:transparent;
+}
+/* Dark = deep forest green (not black) with the same glass idea */
+:root[data-theme="dark"]{
+color-scheme:dark;
+--ink:#F2F7EC;--on-dark:#F2F7EC;--on-dark-soft:#C5D3C2;--eyebrow:#C5F946;
+--color-primary:#C5F946;--color-primary-light:#8EDB36;--color-primary-dark:#1E3A12;--color-black:#1A2B21;
+--color-accent-soft:#C5D3C2;--color-secondary:#1F3327;
+--color-background:#16241C;--page-bg:linear-gradient(160deg,#1A2B21 0%,#213528 50%,#182820 100%);
+--color-surface:rgba(255,255,255,.06);--color-surface-alt:rgba(255,255,255,.1);--color-card:rgba(255,255,255,.08);
+--glass:rgba(255,255,255,.07);--glass-2:rgba(255,255,255,.12);--glass-border:rgba(255,255,255,.18);
+--color-heading:#F2F7EC;--color-text:#D3DDCD;--color-muted:#A3B2A6;--color-border:rgba(255,255,255,.16);--color-error:#FF8A80;
+--grad-dark:linear-gradient(135deg,#1F3428 0%,#264232 55%,#2E5128 100%);
+--grad-text:linear-gradient(90deg,#C5F946,#8EDB36,#C5F946);
+--num:rgba(197,249,70,.07);--soft-pink:rgba(197,249,70,.12);--shadow:rgba(10,20,12,.35);
+--nav-bg:rgba(26,43,33,.86);--menu-bg:rgba(26,43,33,.98);--overlay:rgba(22,36,28,.6);--pop-bg:rgba(32,52,40,.94);
+--blob1:rgba(197,249,70,.14);--blob2:rgba(142,219,54,.1);
+}

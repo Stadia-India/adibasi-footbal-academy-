@@ -1,0 +1,72 @@
+.draw rect,.draw line,.draw circle,.draw path{fill:none;stroke:rgba(255,77,109,.22);stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s .3s ease forwards}
+.draw .ball-path,.ball-path{stroke:var(--color-accent);stroke-dasharray:.02 .02;animation:draw 3.4s .8s ease forwards;opacity:.55}
+@keyframes draw{to{stroke-dashoffset:0}}
+.pitch{width:100%;height:auto;display:block}
+.pitch .pl *{fill:none;stroke:var(--color-accent);stroke-width:.6;opacity:.7}
+.pitch .dot{fill:var(--color-primary);animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.pitch .pass{stroke:var(--color-primary-light);stroke-width:.7;stroke-dasharray:2 2;animation:dash 1.6s linear infinite}
+@keyframes pulse{50%{transform:scale(1.5)}}@keyframes dash{to{stroke-dashoffset:-8}}
+.scroll-ind i{display:block;width:3px;height:10px;background:var(--color-accent);border-radius:2px;animation:scr 1.6s ease-in-out infinite}
+@keyframes scr{0%{transform:translateY(0);opacity:1}100%{transform:translateY(22px);opacity:0}}
+.float-stat{animation:bob 5s ease-in-out infinite}.float-stat.s2{animation-delay:-2.5s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.spin-badge{animation:spin 14s linear infinite;color:var(--color-accent)}@keyframes spin{to{transform:rotate(360deg)}}
+.pt{position:fixed;inset:0;z-index:100;pointer-events:none}
+.pt-ball{position:absolute;left:-60px;bottom:8vh;font-size:44px;animation:roll 1s ease-in forwards}
+.pt-circle{position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px;border-radius:50%;background:var(--color-primary-dark);animation:wipe 1s .25s ease-in-out forwards;opacity:0}
+@keyframes roll{to{transform:translate(110vw,-40vh) rotate(900deg)}}
+@keyframes wipe{0%{transform:scale(0);opacity:1}50%{transform:scale(180);opacity:1}100%{transform:scale(180);opacity:0}}
+@media(max-width:768px){.pt{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.draw *{stroke-dashoffset:0!important}.pt{display:none}}
+/* ===== Blue/Red theme: gradients + extra motion ===== */
+.hero{background:var(--grad-dark);background-size:200% 200%;animation:gshift 14s ease-in-out infinite}
+.story{background:var(--grad-dark);background-size:200% 200%;animation:gshift 18s ease-in-out infinite}
+.support{background:var(--grad);background-size:200% 200%;animation:gshift 12s ease-in-out infinite}
+.video{background:var(--grad-dark)}.footer{background:var(--color-black)}.page-head{background:var(--grad-dark)}
+@keyframes gshift{50%{background-position:100% 100%}}
+.btn{background:linear-gradient(120deg,#E11D48,#FF4D6D);color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(225,29,72,.35);transition:box-shadow .3s,background-position .4s;background-size:200% 100%}
+.btn:hover{background:linear-gradient(120deg,#1D4ED8,#E11D48);box-shadow:0 12px 32px rgba(29,78,216,.4)}
+.btn.ghost{background:transparent;box-shadow:none;border:2px solid rgba(255,255,255,.55)}.btn.ghost:hover{background:rgba(255,255,255,.14)}
+.btn.dark{background:var(--color-primary-dark);color:#fff}.btn.dark:hover{background:var(--grad)}
+.hl em,.sec-title h2 em{background:linear-gradient(90deg,#60A5FA,#FF4D6D,#60A5FA);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gtext 4s linear infinite}
+@keyframes gtext{to{background-position:200% 0}}
+.eyebrow{color:var(--color-primary)}.hero .eyebrow,.story .eyebrow,.support .eyebrow,.video .eyebrow{color:var(--color-accent-light)}
+.mv h2{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.mv p{border-image:var(--grad) 1}
+.big-num{color:#E9EEFF}.nav.solid{backdrop-filter:blur(10px)}
+.spot-bg .ph,.photo.ph{background:linear-gradient(135deg,#E6ECFF,#FFE3E8)}
+.pcard{background:var(--grad-dark)}.pcard:hover{border-color:var(--color-accent)}.tcard,.ccard,.pcard{transition:transform .25s ease-out,border-color .3s,box-shadow .3s}.tcard:hover,.ccard:hover{box-shadow:0 20px 50px rgba(29,78,216,.18)}
+.pitch .pl *{stroke:var(--color-primary-light)}.pitch .dot{fill:var(--color-accent)}.pitch .pass{stroke:var(--color-primary)}.tcard .pitch{background:linear-gradient(135deg,#E6ECFF,#FFE9ED)}
+.path li:last-child{background:var(--grad);color:#fff}.tag{border-color:var(--color-accent);color:var(--color-accent-light)}.filters .on{background:var(--grad);border-color:transparent}
+.hero-card{border-left:5px solid var(--color-accent)}.float-stat{background:rgba(5,14,43,.7);border-color:var(--color-accent)}
+.scroll-ind{border-color:var(--color-accent)}
+/* illustration wrapper + tag */
+.illw{display:contents}.ill-tag{position:absolute;right:.6rem;top:.6rem;z-index:2;font:600 .68rem/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;background:rgba(5,14,43,.7);color:#fff;padding:.35rem .6rem;border-radius:999px;font-style:normal;pointer-events:none}
+.hero-img,.chapter,.mitem,.ccard,.pcard,.img-wrap{position:relative}.spot-bg .ill-tag{display:none}
+.hero-img{animation:morph 9s ease-in-out infinite}@keyframes morph{50%{border-radius:90px 6px 90px 6px}}
+/* orbs, 3D ball */
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:float 9s ease-in-out infinite}
+.o1{width:380px;height:380px;background:#1D4ED8;left:-80px;top:10%}.o2{width:340px;height:340px;background:#E11D48;right:5%;bottom:-60px;animation-delay:-4s}
+@keyframes float{50%{transform:translate(30px,-40px) scale(1.12)}}
+.ball3d{position:absolute;left:46%;top:18%;font-size:56px;z-index:2;animation:kick 6s ease-in-out infinite;filter:drop-shadow(0 20px 12px rgba(0,0,0,.35))}
+@keyframes kick{0%{transform:translate(0,0) rotate(0)}30%{transform:translate(40px,-60px) rotate(360deg)}50%{transform:translate(80px,0) rotate(540deg)}75%{transform:translate(30px,-26px) rotate(720deg)}100%{transform:translate(0,0) rotate(900deg)}}
+@media(max-width:860px){.ball3d{left:auto;right:8%;top:14%;font-size:40px}}
+/* marquee */
+.marquee{overflow:hidden;background:var(--grad);color:#fff;padding:1rem 0;white-space:nowrap;transform:skewY(-1.5deg);margin:-1rem 0;position:relative;z-index:3}
+.marquee.dark{background:var(--color-black)}.marquee.dark span{color:var(--color-accent-light)}
+.mq-track{display:inline-flex;animation:mq 28s linear infinite}.marquee span{font:800 clamp(1.4rem,3.5vw,2.4rem)/1 var(--font-display);text-transform:uppercase;letter-spacing:.06em;padding-right:2rem}.marquee b{font-weight:400;margin-left:1rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* progress, cursor, curtain */
+.progress{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--grad);transform:scaleX(0);transform-origin:left;z-index:300}
+.cur-dot,.cur-ring{display:none}
+body.has-cursor{cursor:none}body.has-cursor a,body.has-cursor button{cursor:none}
+body.has-cursor .cur-dot,body.has-cursor .cur-ring{display:block;position:fixed;left:0;top:0;pointer-events:none;z-index:400;border-radius:50%}
+.cur-dot{width:8px;height:8px;margin:-4px;background:var(--color-accent)}.cur-ring{width:38px;height:38px;margin:-19px;border:2px solid var(--color-accent);mix-blend-mode:normal;transition:width .25s,height .25s,margin .25s,background .25s}
+.cur-ring.big{width:70px;height:70px;margin:-35px;background:rgba(255,77,109,.12)}
+.curtain{position:fixed;inset:0;z-index:500;background:var(--grad);pointer-events:none;animation:curtain 1.3s .2s cubic-bezier(.8,0,.2,1) forwards}
+@keyframes curtain{to{transform:translateY(-100%)}}
+/* hover shine on cards + chapters */
+.chapter .photo{transition:transform .7s,filter .5s}.chapter:hover .photo{transform:scale(1.04) rotate(-.6deg);filter:saturate(1.2)}
+.chapter{overflow:visible}.chapter>.photo,.chapter .illw+*{}
+.mitem .photo{transition:transform .6s,filter .4s}.mitem:hover .photo{transform:scale(1.03);filter:brightness(1.08)}
+.play{background:var(--grad);color:#fff}
+@media(prefers-reduced-motion:reduce){.curtain,.cur-dot,.cur-ring,.ball3d,.orb{display:none!important}.marquee{transform:none}.mq-track{animation:none}}
